@@ -13,11 +13,11 @@ env:
 
  
 build:
- # pre_ci:
-  #  - docker build --rm -t=quay.io/vidyar/beta-sample-img-app .
+  pre_ci:
+    - docker build --rm -t=varshaarun/node-newbuild .
 
   pre_ci_boot:
-    image_name: vidyar/dockerbuild-app
+    image_name: varshaarun/node-newbuild
     image_tag: latest
     pull: true
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
@@ -26,8 +26,8 @@ build:
     - ps -eax
     - ls -al
 
- # post_ci:
-    #- docker push quay.io/vidyar/beta-sample-img-app
+  post_ci:
+    - docker push varshaarun/node-newbuild
 
   smoke_test:
     - sudo ls /
@@ -39,10 +39,10 @@ deploy:
 
 integrations:
   notification:
-    - integrationName: "slack-pvt"
+    - integrationName: "slack-notification"
       type: slack
       recipients:
-        - pvt-channel
+        - random
       branches:
         only:
           - master
@@ -53,7 +53,7 @@ integrations:
     
 
   hub:
-    - integrationName: "docker-vr"
+    - integrationName: "docker-varshaarun"
       type: docker
       branches:
         only:
