@@ -17,7 +17,7 @@ build:
 
   pre_ci_boot:
     image_name: varshaarun/rubyrethinkdb-varshaarunorg2-beta-gh
-    image_tag: latest
+    image_tag: master.3.1
     pull: true
     env: FOO=BAR
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
