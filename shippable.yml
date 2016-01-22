@@ -17,10 +17,10 @@ env:
 
 build:
   pre_ci:
-    - docker build --rm -t= vidyar/beta-sample-node .
+    - docker build --rm -t= varshaarun/beta-sample-node-va .
 
   pre_ci_boot:
-    image_name: vidyar/beta-sample-img-app
+    image_name: varshaarun/beta-sample-node-va
     image_tag: latest
     pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
@@ -30,7 +30,7 @@ build:
     - ls -al
 
   post_ci:
-    - docker push vidyar/beta-sample-node
+    - docker push varshaarun/beta-sample-node-va
 
   smoke_test:
     - sudo ls /
@@ -42,13 +42,13 @@ deploy:
 
 integrations:
   notification:
-    - integrationName: "slack-pvt"
+    - integrationName: "slack-notification"
       type: slack
       recipients:
-        - pvt-channel
-      branches:
-        only:
-          - master
+        - random
+      #branches:
+        #only:
+          #- master
       on_start: always
       on_success: always
       on_failure: always
@@ -56,9 +56,9 @@ integrations:
     
 
   hub:
-    - integrationName: "docker-vr"
+    - integrationName: "docker-varshaarun"
       type: Docker
-      branches:
-        only:
-          - master
+     # branches:
+     #   only:
+      #    - master
  
