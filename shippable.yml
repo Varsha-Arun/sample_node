@@ -16,7 +16,7 @@ build:
   #  - docker build --rm -t=quay.io/vidyar/beta-sample-img-app .
 
   pre_ci_boot:
-    image_name: varshaarun/node-citest2-beta
+    image_name: varshaarun/rubyrethinkdb-varshaarunorg2-beta-gh
     image_tag: latest
     pull: true
     env: FOO=BAR
