@@ -12,12 +12,12 @@ env:
 
  
 build:
- # pre_ci:
-  #  - docker build --rm -t=quay.io/vidyar/beta-sample-img-app .
+  pre_ci:
+    - docker build --rm -t=varshaarun/node-new-buildsm .
 
   pre_ci_boot:
-    image_name: varshaarun/rubyrethinkdb-varshaarunorg2-beta-gh
-    image_tag: master.3.1
+    image_name: varshaarun/node-new-buildsm
+    image_tag: newlatest
     pull: true
     env: FOO=BAR
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
@@ -26,8 +26,8 @@ build:
     - ps -eax
     - ls -al
 
- # post_ci:
-  #  - docker push quay.io/vidyar/beta-sample-img-app
+  post_ci:
+    - docker push varshaarun/node-new-buildsm
 
   smoke_test:
     - sudo ls /
