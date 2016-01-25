@@ -4,22 +4,21 @@ language: node_js
 node_js:
   - 0.12
 
-env:
-  global:
-    - FOO=FUBU
-    - FO1=BUBU
-    - BOO=GUBU
+#env:
+ # global:
+  #  - FOO=FUBU
+   # - FO1=BUBU
+    #- BOO=GUBU
 
  
 build:
   pre_ci:
-    - docker build --rm -t=varshaarun/node-new-buildsm .
+    - docker build --rm -t=varshaarun/testnewbuildsystem-node .
 
   pre_ci_boot:
-    image_name: varshaarun/node-new-buildsm
-    image_tag: newlatest
-    pull: true
-    env: FOO=BAR
+    image_name: varshaarun/testnewbuildsystem-node
+    image_tag: latest
+    pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
   ci:
@@ -27,7 +26,7 @@ build:
     - ls -al
 
   post_ci:
-    - docker push varshaarun/node-new-buildsm
+    - docker push varshaarun/testnewbuildsystem-node
 
   smoke_test:
     - sudo ls /
@@ -58,3 +57,4 @@ integrations:
       branches:
         only:
           - master
+  
