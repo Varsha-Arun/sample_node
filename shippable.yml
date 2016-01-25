@@ -58,4 +58,3 @@ integrations:
       branches:
         only:
           - master
- 
