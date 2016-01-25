@@ -10,8 +10,8 @@ env:
     - FO1=BUBU
     - BOO=GUBU
     
- # matrix:
-  #  - M1=ONE
+  matrix:
+    - M1=ONE
    # - M2=TWO
 
  
