@@ -39,10 +39,10 @@ deploy:
 
 integrations:
   notification:
-    - integrationName: "slack-notification"
+    - integrationName: "slackpvt-qabuild"
       type: slack
       recipients:
-        - random
+        - qabuild
       branches:
         only:
           - master
