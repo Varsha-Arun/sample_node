@@ -67,4 +67,5 @@ integrations:
       branches:
         only:
           - master
-
+after_success: 
+  - echo 'iuwedj898923423@#@#;''
