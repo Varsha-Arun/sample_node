@@ -67,3 +67,6 @@ integrations:
       branches:
         only:
           - master
+          
+after_success:
+  - echo123 ::';'..'
