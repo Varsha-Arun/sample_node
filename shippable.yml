@@ -18,12 +18,12 @@ env:
     #- M2=TWO
  
 build:
- # pre_ci:
-    #- docker build --rm -t=varshaarun/nodenewbuild-beta111 .
+  pre_ci:
+    - docker build --rm -t=480971114143.dkr.ecr.us-east-1.amazonaws.com/test-aws .
 
   pre_ci_boot:
-    image_name: drydock/u12nod 
-    image_tag: prod
+    image_name: 480971114143.dkr.ecr.us-east-1.amazonaws.com/test-aws 
+    image_tag: vanode
     pull: true
     #env: FOO=BAR
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
@@ -32,8 +32,8 @@ build:
     - ps -eax
     - ls -al
 
- # post_ci:
-   # - docker push varshaarun/nodenewbuild-beta111
+  post_ci:
+    - docker push 480971114143.dkr.ecr.us-east-1.amazonaws.com/test-aws
 
   smoke_test:
     - sudo ls /
