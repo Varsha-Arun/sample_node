@@ -30,7 +30,7 @@ build:
     - ls -al
 
   post_ci:
-    - docker push gcr.io/varsha-project/nodenewbuild
+    - docker push varshaarun/nodenewbuild-beta
 
   smoke_test:
     - sudo ls /
