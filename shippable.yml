@@ -10,16 +10,16 @@ env:
     - FO1=BUBU
     - BOO=GUBU
     
-  matrix:
-    - M1=ONE
-    - M2=TWO
+  #matrix:
+   # - M1=ONE
+    #- M2=TWO
  
 build:
-  #pre_ci:
-   # - docker build --rm -t=varshaarun/testnewbuildsystem-node .
+  pre_ci:
+    - docker build --rm -t=quay.io/varshaan/testnewbuildsystem-node .
 
   pre_ci_boot:
-    image_name: varshaarun/testnewbuildsystem-node
+    image_name: quay.io/varshaan/testnewbuildsystem-node
     image_tag: latest
     pull: true
     env: FOO=BAR
@@ -29,8 +29,8 @@ build:
     - ps -eax
     - ls -al
 
-  #post_ci:
-   # - docker push varshaarun/testnewbuildsystem-node
+  post_ci:
+    - docker push quay.io/varshaan/testnewbuildsystem-node
 
   smoke_test:
     - sudo ls /
@@ -65,9 +65,9 @@ integrations:
       on_pull_request: always
 
   hub:
-    - integrationName: "docker-varshaarun"
-      type: docker
+    - integrationName: "varshaan- quay.io"
+      type: quay
       branches:
         only:
           - master
-          
+  
