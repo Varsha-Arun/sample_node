@@ -16,10 +16,10 @@ env:
  
 build:
   pre_ci:
-    - docker build --rm -t=quay.io/varshaan/testnewbuildsystem-node .
+    - docker build --rm -t=gcr.io/varsha-project/nodenewbuild .
 
   pre_ci_boot:
-    image_name: quay.io/varshaan/testnewbuildsystem-node
+    image_name: gcr.io/varsha-project/nodenewbuild
     image_tag: latest
     pull: false
     env: FOO=BAR
@@ -30,7 +30,7 @@ build:
     - ls -al
 
   post_ci:
-    - docker push quay.io/varshaan/testnewbuildsystem-node
+    - docker push gcr.io/varsha-project/nodenewbuild
 
   smoke_test:
     - sudo ls /
@@ -65,9 +65,8 @@ integrations:
       on_pull_request: always
 
   hub:
-    - integrationName: "varshaan- quay.io"
-      type: quay
+    - integrationName: "gcr-varsha-project"
+      type: gcr
       branches:
         only:
           - master
-  
