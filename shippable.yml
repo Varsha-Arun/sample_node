@@ -70,3 +70,4 @@ integrations:
       branches:
         only:
           - master
+          
