@@ -18,13 +18,13 @@ env:
     #- M2=TWO
  
 build:
-  pre_ci:
-    - docker build --rm -t=480971114143.dkr.ecr.us-east-1.amazonaws.com/test-aws .
+#  pre_ci:
+ #   - docker build --rm -t=480971114143.dkr.ecr.us-east-1.amazonaws.com/test-aws .
 
   pre_ci_boot:
-    image_name: 480971114143.dkr.ecr.us-east-1.amazonaws.com/test-aws 
-    image_tag: latest
-    pull: false
+    image_name: varshaarun/node-citest2-beta
+    image_tag: master.7.1
+    pull: true
     #env: FOO=BAR
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
@@ -32,8 +32,8 @@ build:
     - ps -eax
     - ls -al
 
-  post_ci:
-    - docker push 480971114143.dkr.ecr.us-east-1.amazonaws.com/test-aws
+#  post_ci:
+#    - docker push 480971114143.dkr.ecr.us-east-1.amazonaws.com/test-aws
 
   smoke_test:
     - sudo ls /
