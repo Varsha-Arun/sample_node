@@ -16,13 +16,13 @@ env:
  
 build:
   pre_ci:
-    - docker build --rm -t=gcr.io/varsha-project/nodenewbuild .
+    - docker build --rm -t=varshaarun/nodenewbuild-beta .
 
   pre_ci_boot:
-    image_name: gcr.io/varsha-project/nodenewbuild
+    image_name: varshaarun/nodenewbuild-beta
     image_tag: latest
     pull: false
-    env: FOO=BAR
+    #env: FOO=BAR
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
   ci:
@@ -65,8 +65,8 @@ integrations:
       on_pull_request: always
 
   hub:
-    - integrationName: "gcr-varsha-project"
-      type: gcr
+    - integrationName: "docker-varshaarun"
+      type: docker
       branches:
         only:
           - master
