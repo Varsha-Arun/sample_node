@@ -16,21 +16,21 @@ env:
     - M2=TWO
 
 build:
-  #pre_ci:
-   # - docker build --rm -t= varshaarun/beta-sample-node-va .
+  pre_ci:
+    - docker build --rm -t= varshaarun/beta-sample-node-va1 .
 
   pre_ci_boot:
-    image_name: varshaarun/beta-sample-node-va
+    image_name: varshaarun/beta-sample-node-va1
     image_tag: latest
-    pull: true
+    pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
   ci:
     - ps -eax
     - ls -al
 
- # post_ci:
-  #  - docker push varshaarun/beta-sample-node-va
+  post_ci:
+    - docker push varshaarun/beta-sample-node-va1
 
   smoke_test:
     - sudo ls /
