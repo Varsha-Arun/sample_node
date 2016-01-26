@@ -22,8 +22,8 @@ build:
  #   - docker build --rm -t=480971114143.dkr.ecr.us-east-1.amazonaws.com/test-aws .
 
   pre_ci_boot:
-    image_name: varshaarun/node-citest2-beta
-    image_tag: master.7.1
+    image_name: varshaarun/buildapp-preci
+    image_tag: pre-ci
     pull: true
     #env: FOO=BAR
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
