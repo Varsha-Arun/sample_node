@@ -15,11 +15,11 @@ env:
     #- M2=TWO
  
 build:
-  #pre_ci:
-   # - docker build --rm -t=varshaarun/nodenewbuild-beta .
+  pre_ci:
+    - docker build --rm -t=varshaarun/nodenewbuild-beta11 .
 
   pre_ci_boot:
-    image_name: varshaarun/nodenewbuild-beta
+    image_name: varshaarun/nodenewbuild-beta11
     image_tag: latest
     pull: true
     #env: FOO=BAR
@@ -29,8 +29,8 @@ build:
     - ps -eax
     - ls -al
 
-  #post_ci:
-   # - docker push varshaarun/nodenewbuild-beta
+  post_ci:
+    - docker push varshaarun/nodenewbuild-beta11
 
   smoke_test:
     - sudo ls /
