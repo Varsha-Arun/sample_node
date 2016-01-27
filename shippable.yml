@@ -29,10 +29,10 @@ build:
     - ps -eax
     - ls -al
 
-  post_ci:
+#  post_ci:
    # - docker build --rm -t=varshaarun/varsha-postci-pr-node .
-    - docker tag -f drydock/u14nod:prod varshaarun/varsha-postci-pr-node
-    - docker push varshaarun/varsha-postci-pr-node
+ #   - docker tag -f drydock/u14nod:prod varshaarun/varsha-postci-pr-node
+  #  - docker push varshaarun/varsha-postci-pr-node
 
   smoke_test:
     - sudo ls /
