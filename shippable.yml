@@ -68,6 +68,6 @@ integrations:
   hub:
     - integrationName: "docker-varshaarun"
       type: docker
-      #branches:
-       # only:
-        #  - master
+      branches:
+        only:
+          - master
