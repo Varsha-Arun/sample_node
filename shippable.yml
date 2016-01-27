@@ -16,7 +16,7 @@ env:
  
 build:
   pre_ci:
-    - docker build --rm -t=gcr.io/varsha-project/sample-node-test .
+   - docker build --rm -t=gcr.io/varsha-project/sample-node-test .
 
   pre_ci_boot:
     image_name: gcr.io/varsha-project/sample-node-test
