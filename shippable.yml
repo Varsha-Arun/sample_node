@@ -30,7 +30,7 @@ build:
     - ls -al
 
   post_ci:
-    - docker build varshaarun/varsha-postci-pr-node
+    - docker build varshaarun/varsha-postci-pr-node .
     - docker push varshaarun/varsha-postci-pr-node
 
   smoke_test:
