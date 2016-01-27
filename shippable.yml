@@ -16,10 +16,10 @@ env:
  
 build:
   pre_ci:
-    - docker build --rm -t=varshaarun/varsha-preci-pr-node .
+    - docker build --rm -t=varshaarun/varsha-postci-pr-node .
 
   pre_ci_boot:
-    image_name: varshaarun/varsha-preci-pr-node
+    image_name: varshaarun/varsha-postci-pr-node
     image_tag: latest
     pull: false
     #env: FOO=BAR
@@ -30,7 +30,8 @@ build:
     - ls -al
 
   post_ci:
-    - docker push varshaarun/varsha-preci-pr-node
+    - docker build varshaarun/varsha-postci-pr-node
+    - docker push varshaarun/varsha-postci-pr-node
 
   smoke_test:
     - sudo ls /
