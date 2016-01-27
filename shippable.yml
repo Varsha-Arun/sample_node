@@ -18,12 +18,12 @@ env:
     #- M2=TWO
  
 build:
-#  pre_ci:
- #   - docker build --rm -t=480971114143.dkr.ecr.us-east-1.amazonaws.com/test-aws .
+  pre_ci:
+    - docker build --rm -t=varshaarun/shipaye3-precipr-node .
 
   pre_ci_boot:
-    image_name: varshaarun/buildapp-preci
-    image_tag: pre-ci
+    image_name: varshaarun/shipaye3-precipr-node
+    image_tag: latest
     pull: true
     #env: FOO=BAR
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
@@ -32,8 +32,8 @@ build:
     - ps -eax
     - ls -al
 
-#  post_ci:
-#    - docker push 480971114143.dkr.ecr.us-east-1.amazonaws.com/test-aws
+  post_ci:
+    - docker push varshaarun/shipaye3-precipr-node
 
   smoke_test:
     - sudo ls /
