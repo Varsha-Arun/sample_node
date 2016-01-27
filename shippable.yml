@@ -19,10 +19,10 @@ env:
  
 build:
   pre_ci:
-    - docker build --rm -t=varshaarun/shipaye3-precipr-node .
+    - docker build --rm -t=varshaarun/shipaye3-precipr-node1 .
 
   pre_ci_boot:
-    image_name: varshaarun/shipaye3-precipr-node
+    image_name: varshaarun/shipaye3-precipr-node1
     image_tag: latest
     pull: false
     #env: FOO=BAR
@@ -33,7 +33,7 @@ build:
     - ls -al
 
   post_ci:
-    - docker push varshaarun/shipaye3-precipr-node
+    - docker push varshaarun/shipaye3-precipr-node1
 
   smoke_test:
     - sudo ls /
