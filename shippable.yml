@@ -32,8 +32,8 @@ build:
     - ps -eax
     - ls -al
 
-  post_ci:
-    - docker push varshaarun/shipaye3-sample_node
+ # post_ci:
+  #  - docker push varshaarun/shipaye3-sample_node
 
   smoke_test:
     - sudo ls /
