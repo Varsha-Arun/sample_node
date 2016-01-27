@@ -15,8 +15,8 @@ env:
     #- M2=TWO
  
 build:
-  pre_ci:
-    - docker build --rm -t=varshaarun/varsha-postci-pr-node .
+  #pre_ci:
+   # - docker build --rm -t=varshaarun/varsha-postci-pr-node .
 
   pre_ci_boot:
     image_name: varshaarun/varsha-postci-pr-node
@@ -30,7 +30,7 @@ build:
     - ls -al
 
   post_ci:
-    - docker build --rm -t=varshaarun/varsha-postci-pr-node .
+#    - docker build --rm -t=varshaarun/varsha-postci-pr-node .
     - docker push varshaarun/varsha-postci-pr-node
 
   smoke_test:
