@@ -68,7 +68,4 @@ integrations:
 
   hub:
     - integrationName: "gcr-varsha-project"
-      type: docker
-      #branches:
-       # only:
-        #  - master
+      type: gcr
