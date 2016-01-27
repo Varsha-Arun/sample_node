@@ -16,10 +16,10 @@ env:
  
 build:
   pre_ci:
-    - docker build --rm -t=gcr.io/varsha-project/varsha-gcr-node .
+    - docker build --rm -t=gcr.io/varsha-project/varsha-gcr-node2 .
 
   pre_ci_boot:
-    image_name: gcr.io/varsha-project/varsha-gcr-node
+    image_name: gcr.io/varsha-project/varsha-gcr-node2
     image_tag: latest
     pull: false
     #env: FOO=BAR
@@ -30,9 +30,9 @@ build:
     - ls -al
 
   post_ci:
-    - docker build --rm -t=gcr.io/varsha-project/varsha-gcr-node .
+  #  - docker build --rm -t=gcr.io/varsha-project/varsha-gcr-node .
    # - docker tag -f drydock/u14nod:prod varshaarun/varsha-postci-pr-node
-    - docker push gcr.io/varsha-project/varsha-gcr-node
+    - docker push gcr.io/varsha-project/varsha-gcr-node2
 
   smoke_test:
     - sudo ls /
