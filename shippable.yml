@@ -15,11 +15,11 @@ env:
     #- M2=TWO
  
 build:
-  #pre_ci:
-   # - docker build --rm -t=varshaarun/varsha-postci-pr-node .
+  pre_ci:
+    - docker build --rm -t=gcr.io/varsha-project/varsha-gcr-node .
 
   pre_ci_boot:
-    image_name: drydock/u12nod
+    image_name: gcr.io/varsha-project/varsha-gcr-node
     image_tag: prod
     pull: true
     #env: FOO=BAR
@@ -30,9 +30,9 @@ build:
     - ls -al
 
   post_ci:
-   # - docker build --rm -t=varshaarun/varsha-postci-pr-node .
-    - docker tag -f drydock/u14nod:prod varshaarun/varsha-postci-pr-node
-    - docker push varshaarun/varsha-postci-pr-node
+    - docker build --rm -t=gcr.io/varsha-project/varsha-gcr-node .
+   # - docker tag -f drydock/u14nod:prod varshaarun/varsha-postci-pr-node
+    - docker push gcr.io/varsha-project/varsha-gcr-node
 
   smoke_test:
     - sudo ls /
@@ -67,7 +67,7 @@ integrations:
       on_pull_request: always
 
   hub:
-    - integrationName: "docker-varshaarun"
+    - integrationName: "gcr-varsha-project"
       type: docker
       #branches:
        # only:
