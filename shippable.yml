@@ -4,9 +4,6 @@ language: node_js
 node_js:
   - 0.12
 
-#services:
- # - elasticsearch
-  
 env:
   global:
     - FOO=FUBU
@@ -18,13 +15,13 @@ env:
     #- M2=TWO
  
 build:
- # pre_ci:
-  #  - docker build --rm -t=varshaarun/shipaye3-precipr-node1 .
+  pre_ci:
+    - docker build --rm -t=varshaarun/varsha-precipr-node123 .
 
   pre_ci_boot:
-    image_name: drydock/u12nod
-    image_tag: prod
-    pull: true
+    image_name: varshaarun/varsha-precipr-node123
+    image_tag: latest
+    pull: false
     #env: FOO=BAR
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
@@ -32,8 +29,8 @@ build:
     - ps -eax
     - ls -al
 
- # post_ci:
-  #  - docker push varshaarun/shipaye3-sample_node
+  post_ci:
+    - docker push varshaarun/varsha-precipr-node123
 
   smoke_test:
     - sudo ls /
@@ -45,10 +42,10 @@ deploy:
 
 integrations:
   notification:
-    - integrationName: "slack-notifications"
+    - integrationName: "slackpvt-qabuild"
       type: slack
       recipients:
-        - notifications
+        - qabuild
       branches:
         only:
           - master
@@ -68,7 +65,7 @@ integrations:
       on_pull_request: always
 
   hub:
-    - integrationName: "docker-shippabledocker"
+    - integrationName: "docker-varshaarun"
       type: docker
       #branches:
        # only:
