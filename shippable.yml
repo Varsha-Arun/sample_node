@@ -45,10 +45,10 @@ deploy:
 
 integrations:
   notification:
-    - integrationName: "slackpvt-qabuild"
+    - integrationName: "slack-notifications"
       type: slack
       recipients:
-        - qabuild
+        - notifications
       branches:
         only:
           - master
@@ -68,7 +68,7 @@ integrations:
       on_pull_request: always
 
   hub:
-    - integrationName: "docker-varshaarun"
+    - integrationName: "docker-shippabledocker"
       type: docker
       #branches:
        # only:
