@@ -32,7 +32,7 @@ build:
   post_ci:
   #  - docker build --rm -t=gcr.io/varsha-project/varsha-gcr-node .
    # - docker tag -f drydock/u14nod:prod varshaarun/varsha-postci-pr-node
-    - docker push gcr.io/varsha-project/varsha-gcr-node3
+    - docker push gcr.io/varsha-project/varsha-gcr-node2
 
   smoke_test:
     - sudo ls /
