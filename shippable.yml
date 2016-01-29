@@ -69,3 +69,4 @@ integrations:
   hub:
     - integrationName: "gcr-varsha-project"
       type: gcr
+ 
