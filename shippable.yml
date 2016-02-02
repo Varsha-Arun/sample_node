@@ -28,12 +28,12 @@ build:
   ci:
     - ps -eax
     - ls -al
-    - echo "$FO2"
-    - echo "$FOO"
-    - echo "$FO1"
+   # - echo "$FO2"
+    #- echo "$FOO"
+    #- echo "$FO1"
   #  - echo "$BOO"
 
-#  post_ci:
+  post_ci:
    # - docker build --rm -t=varshaarun/varsha-postci-pr-node .
  #   - docker tag -f drydock/u14nod:prod varshaarun/varsha-postci-pr-node
     - docker push varshaarun/varsha-postci-pr-node
