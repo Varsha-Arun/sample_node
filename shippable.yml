@@ -40,6 +40,8 @@ build:
 
   smoke_test:
     - sudo ls /
+    
+  cache: true
 
 deploy:
   pre_build:
