@@ -5,9 +5,9 @@ node_js:
   - 0.12
 
 env:
-  - FOO=FUBU
-  - FO1=BUBU
-  - secure: ocF9OgVtyCEp3fuMkf8xXRNgUPF15iAuEUY8czDOoM9BBZ8eHFwVDHYvGUNChQAIjFsw+5lCHDFnAho3OLLAsWd5QPGO60izkre8FHrLYrKch3GyRw0/YKxNN30Tm7n+VSSkjEjLtVvfA3hf3Gw1l513F1qjtgQ1mhMA+aQcY3LRvrV0TzwsnkaHjmc8CMmh3fiEhI23CLY+ch6wEHR+JG/po4396FX1i6LmAxVe2cGWt6pLQYKLH6UxQ/7bsN0gxRKtFqByVmIKh6UBSYrBU0wFIUfSIzLVAz4K4/3vrgAPXLCwbnjbRSyQfjxh3ZcUK+6E3zITQnikGInKIkR0PA==
+ # - FOO=FUBU
+#  - FO1=BUBU
+#  - secure: ocF9OgVtyCEp3fuMkf8xXRNgUPF15iAuEUY8czDOoM9BBZ8eHFwVDHYvGUNChQAIjFsw+5lCHDFnAho3OLLAsWd5QPGO60izkre8FHrLYrKch3GyRw0/YKxNN30Tm7n+VSSkjEjLtVvfA3hf3Gw1l513F1qjtgQ1mhMA+aQcY3LRvrV0TzwsnkaHjmc8CMmh3fiEhI23CLY+ch6wEHR+JG/po4396FX1i6LmAxVe2cGWt6pLQYKLH6UxQ/7bsN0gxRKtFqByVmIKh6UBSYrBU0wFIUfSIzLVAz4K4/3vrgAPXLCwbnjbRSyQfjxh3ZcUK+6E3zITQnikGInKIkR0PA==
  # - BOO=GUBU
     
   #matrix:
@@ -73,4 +73,3 @@ integrations:
   hub:
     - integrationName: "docker-varshaarun"
       type: docker
-      
