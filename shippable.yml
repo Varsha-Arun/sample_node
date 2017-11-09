@@ -2,76 +2,9 @@ language: node_js
 
 # Version number
 node_js:
-  - 0.12
+  - 4.8
 
-env:
- # - FOO=FUBU
-#  - FO1=BUBU
-#  - secure: ocF9OgVtyCEp3fuMkf8xXRNgUPF15iAuEUY8czDOoM9BBZ8eHFwVDHYvGUNChQAIjFsw+5lCHDFnAho3OLLAsWd5QPGO60izkre8FHrLYrKch3GyRw0/YKxNN30Tm7n+VSSkjEjLtVvfA3hf3Gw1l513F1qjtgQ1mhMA+aQcY3LRvrV0TzwsnkaHjmc8CMmh3fiEhI23CLY+ch6wEHR+JG/po4396FX1i6LmAxVe2cGWt6pLQYKLH6UxQ/7bsN0gxRKtFqByVmIKh6UBSYrBU0wFIUfSIzLVAz4K4/3vrgAPXLCwbnjbRSyQfjxh3ZcUK+6E3zITQnikGInKIkR0PA==
- # - BOO=GUBU
-    
-  #matrix:
-   # - M1=ONE
-    #- M2=TWO
- 
 build:
-  pre_ci:
-    - docker build --rm -t=varshaarun/varsha-postci-pr-node4 .
-
-  pre_ci_boot:
-    image_name: varshaarun/varsha-postci-pr-node4
-    image_tag: latest
-    pull: false
-    #env: FOO=BAR
-    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
-
   ci:
     - ps -eax
     - ls -al
-   # - echo "$FO2"
-    #- echo "$FOO"
-    #- echo "$FO1"
-  #  - echo "$BOO"
-
-  post_ci:
-   # - docker build --rm -t=varshaarun/varsha-postci-pr-node .
- #   - docker tag -f drydock/u14nod:prod varshaarun/varsha-postci-pr-node
-    - docker push varshaarun/varsha-postci-pr-node4
-
-  smoke_test:
-    - sudo ls /
-    
-  #cache: true
-
-#deploy:
-  #pre_build:
-   # - ls
-  #  - ls -al
-
-integrations:
-  notification:
-    - integrationName: "slackpvt-qabuild"
-      type: slack
-      recipients:
-        - qabuild
-      branches:
-        only:
-          - master
-      on_start: always
-      on_success: always
-      on_failure: always
-      on_pull_request: always
-      type: email
-      recipients:
-        - varsha@shippable.com
-      branches:
-        only:
-          - master
-      on_start: always
-      on_success: always
-      on_failure: always
-      on_pull_request: always
-
-  hub:
-    - integrationName: "docker-varshaarun"
-      type: docker
